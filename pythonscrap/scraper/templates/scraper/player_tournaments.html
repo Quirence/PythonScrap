@@ -1,0 +1,57 @@
+<!-- scrapper/templates/scrapper/player_tournaments.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Турниры игрока</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Турниры игрока</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="player_id">ID игрока:</label>
+        <input type="text" id="player_id" name="player_id" value="{{ player_id|default:'' }}">
+        <button type="submit">Показать</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if tournaments %}
+        <h2>Список турниров</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Дата начала</th>
+                    <th>Дата окончания</th>
+                    <th>Место</th>
+                    <th>ELO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tournament in tournaments %}
+                <tr>
+                    <td>{{ tournament.id }}</td>
+                    <td>{{ tournament.title }}</td>
+                    <td>{{ tournament.date_start }}</td>
+                    <td>{{ tournament.date_end }}</td>
+                    <td>{{ tournament.place }}</td>
+                    <td>{{ tournament.elo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>

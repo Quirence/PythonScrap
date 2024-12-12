@@ -1,0 +1,1671 @@
+{
+    "props": {
+        "pageProps": {
+            "session": null,
+            "serverData": {
+                "user": {
+                    "id": "6146",
+                    "club_id": "98",
+                    "login": "Логан",
+                    "first_name": "Денис",
+                    "last_name": "Козлов",
+                    "date_registration": "2024-01-31 17:09:43",
+                    "icon_type": "none",
+                    "icon": "",
+                    "gcoin": "0",
+                    "elo": "1942.93",
+                    "vk_id": "570820433",
+                    "referee_license": "0",
+                    "is_paid": "0",
+                    "is_can_comment": "1",
+                    "since": "2024",
+                    "avatar_link": "https://s3.juicedev.ru/gomafia/user/avatar/6146/ava_1712574694.jpg"
+                },
+                "stats": {
+                    "primary": {
+                        "mafia": 23,
+                        "red": 90,
+                        "don": 15,
+                        "sheriff": 12,
+                        "total_games": 140
+                    },
+                    "win_rate": {
+                        "mafia": {
+                            "win": {
+                                "value": 12,
+                                "percent": 52
+                            },
+                            "total": {
+                                "value": 23
+                            }
+                        },
+                        "red": {
+                            "win": {
+                                "value": 42,
+                                "percent": 47
+                            },
+                            "total": {
+                                "value": 90
+                            }
+                        },
+                        "don": {
+                            "win": {
+                                "value": 12,
+                                "percent": 80
+                            },
+                            "total": {
+                                "value": 15
+                            }
+                        },
+                        "sheriff": {
+                            "win": {
+                                "value": 7,
+                                "percent": 58
+                            },
+                            "total": {
+                                "value": 12
+                            }
+                        },
+                        "total_games": 140,
+                        "total_wins": {
+                            "value": 73,
+                            "percent": 52
+                        }
+                    },
+                    "win_strike": {
+                        "mafia": {
+                            "max": 5
+                        },
+                        "red": {
+                            "max": 6
+                        },
+                        "don": {
+                            "max": 5
+                        },
+                        "sheriff": {
+                            "max": 5
+                        }
+                    },
+                    "games_stats": {
+                        "average_points": 0.64,
+                        "prize_places": 2
+                    },
+                    "advanced_points": {
+                        "red": {
+                            "points": 6.2,
+                            "per_game": 0.07
+                        },
+                        "black": {
+                            "points": 7.5,
+                            "per_game": 0.2
+                        },
+                        "sheriff": {
+                            "points": 1,
+                            "per_game": 0.08
+                        },
+                        "points_10_games": 1.05
+                    }
+                },
+                "history": [
+                    {
+                        "id": "1116",
+                        "title": "Кубок Поршня 2024",
+                        "date_start": "2024-10-05",
+                        "date_end": "2024-10-06",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "8",
+                        "gg": "14.00",
+                        "elo": 63,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 8
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 3
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 3
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 24
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 35
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1554",
+                        "title": "Кубок Вечной Мерзлоты 2024",
+                        "date_start": "2024-09-28",
+                        "date_end": "2024-09-29",
+                        "country_translate": "Россия",
+                        "city_translate": "Якутск",
+                        "place": "11",
+                        "gg": "0.00",
+                        "elo": 40,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 1
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 7
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 26
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 25
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 18
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -20
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 26
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1565",
+                        "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                        "date_start": "2024-09-01",
+                        "date_end": "2024-09-01",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "5",
+                        "gg": "0.00",
+                        "elo": 41,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 13
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 25
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -13
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1109",
+                        "title": "Кубок Байкала 2024",
+                        "date_start": "2024-08-17",
+                        "date_end": "2024-08-18",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "25",
+                        "gg": "0.00",
+                        "elo": 10,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -15
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 33
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 11
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -18
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 12
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1456",
+                        "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                        "date_start": "2024-08-11",
+                        "date_end": "2024-08-11",
+                        "country_translate": "Россия",
+                        "city_translate": "Братск",
+                        "place": "3",
+                        "gg": "0.00",
+                        "elo": 37,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -10
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 1
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -11
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1104",
+                        "title": "Senso Cup 2024",
+                        "date_start": "2024-07-13",
+                        "date_end": "2024-07-14",
+                        "country_translate": "Россия",
+                        "city_translate": "Красноярск",
+                        "place": "38",
+                        "gg": "0.00",
+                        "elo": 0,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1395",
+                        "title": "ПЛМ. Отборочная серия. Иркутск",
+                        "date_start": "2024-06-30",
+                        "date_end": "2024-06-30",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "3",
+                        "gg": "0.00",
+                        "elo": 29,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -8
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 22
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 22
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 11
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -15
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -9
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            }
+                        ]
+                    },
+                    {
+                        "id": "959",
+                        "title": "НеПара 2024",
+                        "date_start": "2024-05-10",
+                        "date_end": "2024-05-11",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "6",
+                        "gg": "16.00",
+                        "elo": 161,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -10
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 33
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -11
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 14
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 31
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "958",
+                        "title": "Bratsk Open 2024",
+                        "date_start": "2024-04-28",
+                        "date_end": "2024-04-29",
+                        "country_translate": "Россия",
+                        "city_translate": "Братск",
+                        "place": "5",
+                        "gg": "11.00",
+                        "elo": 222,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 31
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -20
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 41
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 67
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 42
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 20
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 14
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 28
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -4
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1275",
+                        "title": "Серия FSM DV 2024. Иркутск",
+                        "date_start": "2024-04-14",
+                        "date_end": "2024-04-14",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "10",
+                        "gg": "0.00",
+                        "elo": 69,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -5
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -9
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 41
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -3
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 34
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -5
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -7
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -6
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 41
+                            }
+                        ]
+                    }
+                ],
+                "historyTotal": "11",
+                "victories": [
+                    {
+                        "id": "1456",
+                        "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                        "date_start": "2024-08-11",
+                        "place": "3"
+                    },
+                    {
+                        "id": "1395",
+                        "title": "ПЛМ. Отборочная серия. Иркутск",
+                        "date_start": "2024-06-30",
+                        "place": "3"
+                    }
+                ],
+                "chart": {
+                    "elo": [
+                        {
+                            "id": 952,
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 1271
+                        },
+                        {
+                            "id": 1275,
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 1340
+                        },
+                        {
+                            "id": 958,
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 1562
+                        },
+                        {
+                            "id": 959,
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 1723
+                        },
+                        {
+                            "id": 1395,
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 1752
+                        },
+                        {
+                            "id": 1456,
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 1789
+                        },
+                        {
+                            "id": 1109,
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 1799
+                        },
+                        {
+                            "id": 1565,
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 1840
+                        },
+                        {
+                            "id": 1554,
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 1880
+                        },
+                        {
+                            "id": 1116,
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 1943
+                        }
+                    ],
+                    "elo_delta": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 230
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 69
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 222
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 161
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 29
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 37
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 10
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 41
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 40
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 63
+                        }
+                    ],
+                    "sum": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 8.6
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 3.4
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 12.08
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 12.97
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 7.1
+                        },
+                        {
+                            "title": "Senso Cup 2024",
+                            "x": "2024-07-13",
+                            "y": 3.5
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 6.3
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 8
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 6.55
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 9.5
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 12.1
+                        }
+                    ],
+                    "sum_extra": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 0.6
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 0.4
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 2.12
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 2.9
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 1.05
+                        },
+                        {
+                            "title": "Senso Cup 2024",
+                            "x": "2024-07-13",
+                            "y": 0.5
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 1.3
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 1
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 1.45
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 2.2
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 2.1
+                        }
+                    ]
+                },
+                "averageElo": 1468.55,
+                "togetherStats": false,
+                "comments": null,
+                "commentsTotal": 0,
+                "defaultParams": {
+                    "period": "current",
+                    "gameType": "all",
+                    "tournamentType": "fsm",
+                    "limit": 10
+                },
+                "urlParams": {
+                    "period": "current",
+                    "gameType": "all",
+                    "tournamentType": "fsm",
+                    "limit": 10,
+                    "page": 1
+                },
+                "tab": "history",
+                "rewardsOpened": "",
+                "playerStatsOpened": ""
+            }
+        },
+        "__N_SSP": true
+    },
+    "page": "/stats/[sid]",
+    "query": {
+        "tab": "history",
+        "sid": "6146"
+    },
+    "buildId": "DoA-ug7qpNaLLU2PyiJzb",
+    "isFallback": false,
+    "gssp": true,
+    "scriptLoader": []
+}
