@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <meta charSet="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"/>
+    <link rel="manifest" href="/favicons/site.webmanifest"/>
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+    <link rel="shortcut icon" href="/favicons/favicon.ico"/>
+    <meta name="msapplication-TileColor" content="#603cba"/>
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="preconnect" href="https://s3.vk-admin.com"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <title>gomafia</title>
+    <script>
+        if (window.localStorage) {
+            var scheme = window.localStorage.getItem('theme');
+            document.documentElement.setAttribute('scheme', scheme);
+        }
+    </script>
+    <meta name="next-head-count" content="17"/>
+    <link rel="preload" href="/_next/static/css/d15cde1488afc293.css" as="style"/>
+    <link rel="stylesheet" href="/_next/static/css/d15cde1488afc293.css" data-n-g=""/>
+    <link rel="preload" href="/_next/static/css/6c9561237347182f.css" as="style"/>
+    <link rel="stylesheet" href="/_next/static/css/6c9561237347182f.css" data-n-p=""/>
+    <noscript data-n-css=""></noscript>
+    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script>
+    <script src="/_next/static/chunks/webpack-816d6c5042e123ff.js" defer=""></script>
+    <script src="/_next/static/chunks/framework-c23e25b34dc0dfa5.js" defer=""></script>
+    <script src="/_next/static/chunks/main-020dcebe1f83224c.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/_app-64ad94402d02134d.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/stats/%5Bsid%5D-cc7c0cf075789bc2.js" defer=""></script>
+    <script src="/_next/static/DoA-ug7qpNaLLU2PyiJzb/_buildManifest.js" defer=""></script>
+    <script src="/_next/static/DoA-ug7qpNaLLU2PyiJzb/_ssgManifest.js" defer=""></script>
+    <script src="/_next/static/DoA-ug7qpNaLLU2PyiJzb/_middlewareManifest.js" defer=""></script>
+    <style data-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">@font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZs.woff) format('woff')
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZs.woff) format('woff')
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZs.woff) format('woff')
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZs.woff) format('woff')
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZs.woff) format('woff')
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }</style>
+</head>
+<body>
+<div id="__next" data-reactroot="">
+    <div class="CabinetWrapper_cabinet-wrapper__iGXfl CabinetWrapper_cabinet-wrapper_secondary__QdNhT ">
+        <div class="CabinetHeader_cabinet-header__VOUVq">
+            <div class="CabinetHeader_cabinet-header__container__Z15bY container">
+                <div class="CabinetHeader_cabinet-header__brand__s25sQ">
+                    <div class="CabinetHeader_cabinet-header__brand-logo__hStcu cursor-pointer"></div>
+                </div>
+                <div class="MenuToggle_menu-toggle__Cl37H">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <path class="MenuToggle_menu-toggle__line__1lcOk MenuToggle_menu-toggle__line1__TTq_s"
+                              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+                        <path class="MenuToggle_menu-toggle__line__1lcOk MenuToggle_menu-toggle__line2__zhqqM"
+                              d="M 20,50 H 80"></path>
+                        <path class="MenuToggle_menu-toggle__line__1lcOk MenuToggle_menu-toggle__line3__fA56J"
+                              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+                    </svg>
+                </div>
+                <div class="CabinetHeader_cabinet-header__mobile__jjGPv ">
+                    <div class="CabinetHeader_cabinet-header__mobile-wrap__26r__">
+                        <div class="CabinetHeader_cabinet-header__mobile-row__OkPqx">
+                            <div class="CabinetHeader_cabinet-header__mobile-link___QtsC " href="/tournaments">Турниры
+                            </div>
+                            <div class="CabinetHeader_cabinet-header__mobile-link___QtsC " href="/broadcasts">
+                                Трансляции
+                            </div>
+                            <div class="CabinetHeader_cabinet-header__mobile-link___QtsC " href="/rating">Клубы и
+                                игроки
+                            </div>
+                            <div class="CabinetHeader_cabinet-header__mobile-link___QtsC " href="/judges">Судейский
+                                состав
+                            </div>
+                        </div>
+                        <div class="CabinetHeader_cabinet-header__auth__0tP7N">
+                            <div class="CabinetHeader_cabinet-header__nav-link__wlgCQ CabinetHeader_cabinet-header__nav-link_submenu__ZdA9M "
+                                 href="/register">Зарегистрироваться
+                            </div>
+                            <div class="CabinetHeader_cabinet-header__nav-link__wlgCQ CabinetHeader_cabinet-header__nav-link_submenu__ZdA9M "
+                                 href="/login">Войти
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="PageContainer_page-container__jmTHd">
+            <div class="BlockWrap_block-wrap__D0pdR BlockWrap_block-wrap_padding-large__I8WAK BlockWrap_block-wrap_full__xEWgy"
+                 style="margin-top:0;margin-bottom:0">
+                <div class="ProfileUserInfo_profile-user__50uZp">
+                    <div class="Avatar_avatar__Wqsgs"
+                         style="background-image:url(https://s3.juicedev.ru/gomafia/user/avatar/6146/ava_1712574694.jpg);width:96px;min-width:96px;height:96px"></div>
+                    <div class="ProfileUserInfo_profile-user__name__iJAAE">Логан</div>
+                    <div class="ProfileUserInfo_profile-user__since__AhmBg">на сайте с <!-- -->2024<!-- --> года</div>
+                </div>
+                <div class="stats_stats__tabs__kQwE3">
+                    <div class="Tabs_tabs__wwlAH">
+                        <div class="Tabs_tabs-nav__ZjIAH Tabs_tabs-nav_center__763N6 Tabs_tabs-nav_like-buttons__ftohz">
+                            <div class="Tabs_tabs-tab__ognto">Статистика</div>
+                            <div class="Tabs_tabs-tab__ognto">Графики</div>
+                            <div class="Tabs_tabs-tab__ognto Tabs_tabs-tab_selected__F8aQs">История игр</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="BlockWrap_block-wrap__D0pdR BlockWrap_block-wrap_full__xEWgy"
+                 style="margin-top:0;margin-bottom:0">
+                <div class="stats_stats__table__UoxZW">
+                    <div class="TableHistory_tournament-table-history__OZiz8">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td></td>
+                                <td>Турнир</td>
+                                <td>Дата проведения</td>
+                                <td>Место</td>
+                                <td>GG</td>
+                                <td>ELO</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1116"><b>Кубок Поршня 2024</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">05.10.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">06.10.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>8</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 14</div>
+                                </td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 63</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1554"><b>Кубок Вечной Мерзлоты 2024</b></a></div>
+                                        <span>Россия, Якутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">28.09.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">29.09.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>11</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 40</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1565"><b>Кубок России | Отбор | Сибирь и Урал | Inside
+                                            | 1 серия</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">01.09.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">01.09.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>5</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 41</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1109"><b>Кубок Байкала 2024</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">17.08.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">18.08.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>25</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 10</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1456"><b>Прибайкальская лига мафии 2024. Отборочная
+                                            серия. Иркутск 2</b></a></div>
+                                        <span>Россия, Братск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">11.08.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">11.08.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 37</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1104"><b>Senso Cup 2024</b></a></div>
+                                        <span>Россия, Красноярск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">13.07.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">14.07.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>38</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1395"><b>ПЛМ. Отборочная серия. Иркутск</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">30.06.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">30.06.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 29</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/959"><b>НеПара 2024</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">10.05.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">11.05.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>6</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 16</div>
+                                </td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 161</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/958"><b>Bratsk Open 2024</b></a></div>
+                                        <span>Россия, Братск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">28.04.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">29.04.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>5</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 11</div>
+                                </td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 222</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="cursor-pointer"><span
+                                            class="Icon_icon__8OrGo Icon_icon_primary__Ir_zF Icon_icon_chevron-right___5KQ1"
+                                            style="width:16px;height:16px"></span></div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div><a target="_self" class="Links_links__c3oXE Links_links_primary__fsjS6"
+                                                href="/tournament/1275"><b>Серия FSM DV 2024. Иркутск</b></a></div>
+                                        <span>Россия, Иркутск</span></div>
+                                </td>
+                                <td>
+                                    <div class="TableHistory_tournament-table-history__dates-container__4Wflu">
+                                        <div class="TableHistory_tournament-table-history__dates__25iur">
+                                            <div class="undefined undefined">14.04.2024</div>
+                                            <div class="TableHistory_tournament-table-history__dates-hr___K3AU"></div>
+                                            <div class="undefined undefined">14.04.2024</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>10</td>
+                                <td>0</td>
+                                <td>
+                                    <div class="text-success">+<!-- --> 69</div>
+                                </td>
+                                <div class="TableHistory_tournament-table-history__shadow__XHo_t"
+                                     style="height:0;width:0;margin-left:0px"></div>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="Loader_loader__Qiyey"></div>
+                    <div class="Pagination_pagination__hR6tq">
+                        <div class="Pagination_pagination__page___s0V8 Pagination_pagination__page-selected__8gXVU">1
+                        </div>
+                        <div class="Pagination_pagination__page___s0V8">2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="CabinetFooter_cabinet-footer__FOYJe">
+            <div class="container">
+                <div class="CabinetFooter_cabinet-footer__grid__sFAwo">
+                    <div class="CabinetFooter_cabinet-footer__col__M4yT_">
+                        <div class="CabinetFooter_cabinet-footer__made-and-logo__zvzjy"><a href="https://gomafia.pro"
+                                                                                           target="_blank">
+                            <div class="CabinetFooter_cabinet-footer__logo__85vCr"></div>
+                        </a><a href="https://juicedev.ru" target="_blank">
+                            <div class="CabinetFooter_cabinet-footer__made-in-russia__8iS07"></div>
+                        </a></div>
+                        <div class="CabinetFooter_cabinet-footer__cards__mhRfb">
+                            <div class="CabinetFooter_cabinet-footer__card__EHI0t CabinetFooter_cabinet-footer__card_visa__pK8Oi"></div>
+                            <div class="CabinetFooter_cabinet-footer__card__EHI0t CabinetFooter_cabinet-footer__card_master__3DonK"></div>
+                            <div class="CabinetFooter_cabinet-footer__card__EHI0t CabinetFooter_cabinet-footer__card_mir__V4oBz"></div>
+                        </div>
+                        <div class="CabinetFooter_cabinet-footer__items__rFd5e"><a target="_blank"
+                                                                                   class="Links_links__c3oXE Links_links_dark__DAlb1"
+                                                                                   href="/user-agreement.pdf">Пользовательское
+                            соглашение</a></div>
+                    </div>
+                    <div class="CabinetFooter_cabinet-footer__col__M4yT_">
+                        <div class="CabinetFooter_cabinet-footer__title__h4yrw">Основное</div>
+                        <div class="CabinetFooter_cabinet-footer__items__rFd5e"><a
+                                class="Links_links__c3oXE Links_links_dark__DAlb1" href="/commands">Приказы</a><a
+                                class="Links_links__c3oXE Links_links_dark__DAlb1"
+                                href="/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%20%D0%B8%D0%B3%D1%80%D1%8B%20%D0%9C%D0%B0%D1%84%D0%B8%D1%8F.pdf">Правила</a><a
+                                class="Links_links__c3oXE Links_links_dark__DAlb1" href="/gg-rules">Баллы GG</a></div>
+                    </div>
+                    <div class="CabinetFooter_cabinet-footer__col__M4yT_">
+                        <div class="CabinetFooter_cabinet-footer__title__h4yrw">Дополнительно</div>
+                        <div class="CabinetFooter_cabinet-footer__items__rFd5e"><a
+                                class="Links_links__c3oXE Links_links_dark__DAlb1" href="/broadcasts">Трансляции</a><a
+                                class="Links_links__c3oXE Links_links_dark__DAlb1" href="/profile">Личный кабинет</a><a
+                                target="_blank" class="Links_links__c3oXE Links_links_dark__DAlb1"
+                                href="https://www.figma.com/community/file/1234114344620960872">Брендбук</a></div>
+                    </div>
+                    <div class="CabinetFooter_cabinet-footer__col__M4yT_ CabinetFooter_cabinet-footer__col_contacts__cAaKu">
+                        <div class="CabinetFooter_cabinet-footer__title__h4yrw">Обратная связь</div>
+                        <div class="CabinetFooter_cabinet-footer__items__rFd5e">
+                            <div class="Button_button__9tXVr Button_button_secondary__vI3F5 Button_button_link__5jqhD">
+                                <a target="_blank" class="Links_links__c3oXE Links_links_primary__fsjS6 d-flex"
+                                   href="https://vk.com/im?sel=-210260335">
+                                    <div class="Button_button__inner___dH1V"><span
+                                            class="Icon_icon__8OrGo Icon_icon_vk__Csf0f Button_button__icon__nl6i1 "
+                                            style="width:16px;height:16px"></span>Поддержка
+                                    </div>
+                                </a></div>
+                            <div class="Social_social_footer__XHcSI">
+                                <div class="Social_social__inner__QzfQq">
+                                    <div><a href="https://vk.com/gomafiapro" target="_blank"
+                                            class="Icon_icon__8OrGo Icon_icon_vk__Csf0f Icon_icon_link__OZzBg Icon_icon_hover-primary__T6vk_"
+                                            style="width:34px;height:34px"></a></div>
+                                    <a href="https://instagram.com/gomafiapro" target="_blank"
+                                       class="Icon_icon__8OrGo Icon_icon_instagram__4Af6e Icon_icon_link__OZzBg Icon_icon_hover-primary__T6vk_"
+                                       style="width:34px;height:34px"></a><a
+                                        href="https://youtube.com/channel/UCnaL3xqT1LyTOnfqQCPAhRQ" target="_blank"
+                                        class="Icon_icon__8OrGo Icon_icon_youtube__3v_o9 Icon_icon_link__OZzBg Icon_icon_hover-primary__T6vk_"
+                                        style="width:34px;height:34px"></a><a href="https://t.me/gomafiapro"
+                                                                              target="_blank"
+                                                                              class="Icon_icon__8OrGo Icon_icon_telegram__DXCBP Icon_icon_link__OZzBg Icon_icon_hover-primary__T6vk_"
+                                                                              style="width:34px;height:34px"></a><a
+                                        href="https://www.twitch.tv/fsmtv" target="_blank"
+                                        class="Icon_icon__8OrGo Icon_icon_twitch__FOTq0 Icon_icon_link__OZzBg Icon_icon_hover-primary__T6vk_"
+                                        style="width:34px;height:34px"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="__NEXT_DATA__" type="application/json">{
+    "props": {
+        "pageProps": {
+            "session": null,
+            "serverData": {
+                "user": {
+                    "id": "6146",
+                    "club_id": "98",
+                    "login": "Логан",
+                    "first_name": "Денис",
+                    "last_name": "Козлов",
+                    "date_registration": "2024-01-31 17:09:43",
+                    "icon_type": "none",
+                    "icon": "",
+                    "gcoin": "0",
+                    "elo": "1942.93",
+                    "vk_id": "570820433",
+                    "referee_license": "0",
+                    "is_paid": "0",
+                    "is_can_comment": "1",
+                    "since": "2024",
+                    "avatar_link": "https://s3.juicedev.ru/gomafia/user/avatar/6146/ava_1712574694.jpg"
+                },
+                "stats": {
+                    "primary": {
+                        "mafia": 23,
+                        "red": 90,
+                        "don": 15,
+                        "sheriff": 12,
+                        "total_games": 140
+                    },
+                    "win_rate": {
+                        "mafia": {
+                            "win": {
+                                "value": 12,
+                                "percent": 52
+                            },
+                            "total": {
+                                "value": 23
+                            }
+                        },
+                        "red": {
+                            "win": {
+                                "value": 42,
+                                "percent": 47
+                            },
+                            "total": {
+                                "value": 90
+                            }
+                        },
+                        "don": {
+                            "win": {
+                                "value": 12,
+                                "percent": 80
+                            },
+                            "total": {
+                                "value": 15
+                            }
+                        },
+                        "sheriff": {
+                            "win": {
+                                "value": 7,
+                                "percent": 58
+                            },
+                            "total": {
+                                "value": 12
+                            }
+                        },
+                        "total_games": 140,
+                        "total_wins": {
+                            "value": 73,
+                            "percent": 52
+                        }
+                    },
+                    "win_strike": {
+                        "mafia": {
+                            "max": 5
+                        },
+                        "red": {
+                            "max": 6
+                        },
+                        "don": {
+                            "max": 5
+                        },
+                        "sheriff": {
+                            "max": 5
+                        }
+                    },
+                    "games_stats": {
+                        "average_points": 0.64,
+                        "prize_places": 2
+                    },
+                    "advanced_points": {
+                        "red": {
+                            "points": 6.2,
+                            "per_game": 0.07
+                        },
+                        "black": {
+                            "points": 7.5,
+                            "per_game": 0.2
+                        },
+                        "sheriff": {
+                            "points": 1,
+                            "per_game": 0.08
+                        },
+                        "points_10_games": 1.05
+                    }
+                },
+                "history": [
+                    {
+                        "id": "1116",
+                        "title": "Кубок Поршня 2024",
+                        "date_start": "2024-10-05",
+                        "date_end": "2024-10-06",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "8",
+                        "gg": "14.00",
+                        "elo": 63,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 8
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 3
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 3
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 24
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 35
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1554",
+                        "title": "Кубок Вечной Мерзлоты 2024",
+                        "date_start": "2024-09-28",
+                        "date_end": "2024-09-29",
+                        "country_translate": "Россия",
+                        "city_translate": "Якутск",
+                        "place": "11",
+                        "gg": "0.00",
+                        "elo": 40,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 1
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 7
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 26
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 25
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 18
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -20
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 26
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1565",
+                        "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                        "date_start": "2024-09-01",
+                        "date_end": "2024-09-01",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "5",
+                        "gg": "0.00",
+                        "elo": 41,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 13
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 25
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -14
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -13
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1109",
+                        "title": "Кубок Байкала 2024",
+                        "date_start": "2024-08-17",
+                        "date_end": "2024-08-18",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "25",
+                        "gg": "0.00",
+                        "elo": 10,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -15
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -16
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 33
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 11
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -18
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 12
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1456",
+                        "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                        "date_start": "2024-08-11",
+                        "date_end": "2024-08-11",
+                        "country_translate": "Россия",
+                        "city_translate": "Братск",
+                        "place": "3",
+                        "gg": "0.00",
+                        "elo": 37,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -10
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 1
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -11
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1104",
+                        "title": "Senso Cup 2024",
+                        "date_start": "2024-07-13",
+                        "date_end": "2024-07-14",
+                        "country_translate": "Россия",
+                        "city_translate": "Красноярск",
+                        "place": "38",
+                        "gg": "0.00",
+                        "elo": 0,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "1",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1395",
+                        "title": "ПЛМ. Отборочная серия. Иркутск",
+                        "date_start": "2024-06-30",
+                        "date_end": "2024-06-30",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "3",
+                        "gg": "0.00",
+                        "elo": 29,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -8
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 22
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 6
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 22
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 4
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 11
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -15
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -9
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -16
+                            }
+                        ]
+                    },
+                    {
+                        "id": "959",
+                        "title": "НеПара 2024",
+                        "date_start": "2024-05-10",
+                        "date_end": "2024-05-11",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "6",
+                        "gg": "16.00",
+                        "elo": 161,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -10
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 33
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -11
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 32
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 14
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 31
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 21
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 23
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 2
+                            },
+                            {
+                                "game_num": "16",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -15
+                            }
+                        ]
+                    },
+                    {
+                        "id": "958",
+                        "title": "Bratsk Open 2024",
+                        "date_start": "2024-04-28",
+                        "date_end": "2024-04-29",
+                        "country_translate": "Россия",
+                        "city_translate": "Братск",
+                        "place": "5",
+                        "gg": "11.00",
+                        "elo": 222,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 31
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 19
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -20
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "7",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 41
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 67
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 42
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 10
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -13
+                            },
+                            {
+                                "game_num": "11",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 20
+                            },
+                            {
+                                "game_num": "12",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 14
+                            },
+                            {
+                                "game_num": "13",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "5",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 28
+                            },
+                            {
+                                "game_num": "14",
+                                "role": "sheriff",
+                                "role_translate": "Шериф",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 0
+                            },
+                            {
+                                "game_num": "15",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -4
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1275",
+                        "title": "Серия FSM DV 2024. Иркутск",
+                        "date_start": "2024-04-14",
+                        "date_end": "2024-04-14",
+                        "country_translate": "Россия",
+                        "city_translate": "Иркутск",
+                        "place": "10",
+                        "gg": "0.00",
+                        "elo": 69,
+                        "games": [
+                            {
+                                "game_num": "1",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "3",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -5
+                            },
+                            {
+                                "game_num": "2",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "1",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -9
+                            },
+                            {
+                                "game_num": "3",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "6",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 41
+                            },
+                            {
+                                "game_num": "4",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "2",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -12
+                            },
+                            {
+                                "game_num": "5",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "4",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -3
+                            },
+                            {
+                                "game_num": "6",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "8",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": 34
+                            },
+                            {
+                                "game_num": "7",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "5",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -5
+                            },
+                            {
+                                "game_num": "8",
+                                "role": "red",
+                                "role_translate": "Мирный",
+                                "place": "10",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": -7
+                            },
+                            {
+                                "game_num": "9",
+                                "role": "mafia",
+                                "role_translate": "Мафия",
+                                "place": "9",
+                                "win": "city",
+                                "win_translate": "Мирные",
+                                "elo": -6
+                            },
+                            {
+                                "game_num": "10",
+                                "role": "don",
+                                "role_translate": "Дон",
+                                "place": "7",
+                                "win": "mafia",
+                                "win_translate": "Мафия",
+                                "elo": 41
+                            }
+                        ]
+                    }
+                ],
+                "historyTotal": "11",
+                "victories": [
+                    {
+                        "id": "1456",
+                        "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                        "date_start": "2024-08-11",
+                        "place": "3"
+                    },
+                    {
+                        "id": "1395",
+                        "title": "ПЛМ. Отборочная серия. Иркутск",
+                        "date_start": "2024-06-30",
+                        "place": "3"
+                    }
+                ],
+                "chart": {
+                    "elo": [
+                        {
+                            "id": 952,
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 1271
+                        },
+                        {
+                            "id": 1275,
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 1340
+                        },
+                        {
+                            "id": 958,
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 1562
+                        },
+                        {
+                            "id": 959,
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 1723
+                        },
+                        {
+                            "id": 1395,
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 1752
+                        },
+                        {
+                            "id": 1456,
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 1789
+                        },
+                        {
+                            "id": 1109,
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 1799
+                        },
+                        {
+                            "id": 1565,
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 1840
+                        },
+                        {
+                            "id": 1554,
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 1880
+                        },
+                        {
+                            "id": 1116,
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 1943
+                        }
+                    ],
+                    "elo_delta": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 230
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 69
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 222
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 161
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 29
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 37
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 10
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 41
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 40
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 63
+                        }
+                    ],
+                    "sum": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 8.6
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 3.4
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 12.08
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 12.97
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 7.1
+                        },
+                        {
+                            "title": "Senso Cup 2024",
+                            "x": "2024-07-13",
+                            "y": 3.5
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 6.3
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 8
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 6.55
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 9.5
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 12.1
+                        }
+                    ],
+                    "sum_extra": [
+                        {
+                            "title": "Irkutsk Open 2024",
+                            "x": "2024-02-17",
+                            "y": 0.6
+                        },
+                        {
+                            "title": "Серия FSM DV 2024. Иркутск",
+                            "x": "2024-04-14",
+                            "y": 0.4
+                        },
+                        {
+                            "title": "Bratsk Open 2024",
+                            "x": "2024-04-28",
+                            "y": 2.12
+                        },
+                        {
+                            "title": "НеПара 2024",
+                            "x": "2024-05-10",
+                            "y": 2.9
+                        },
+                        {
+                            "title": "ПЛМ. Отборочная серия. Иркутск",
+                            "x": "2024-06-30",
+                            "y": 1.05
+                        },
+                        {
+                            "title": "Senso Cup 2024",
+                            "x": "2024-07-13",
+                            "y": 0.5
+                        },
+                        {
+                            "title": "Прибайкальская лига мафии 2024. Отборочная серия. Иркутск 2",
+                            "x": "2024-08-11",
+                            "y": 1.3
+                        },
+                        {
+                            "title": "Кубок Байкала 2024",
+                            "x": "2024-08-17",
+                            "y": 1
+                        },
+                        {
+                            "title": "Кубок России | Отбор | Сибирь и Урал | Inside | 1 серия",
+                            "x": "2024-09-01",
+                            "y": 1.45
+                        },
+                        {
+                            "title": "Кубок Вечной Мерзлоты 2024",
+                            "x": "2024-09-28",
+                            "y": 2.2
+                        },
+                        {
+                            "title": "Кубок Поршня 2024",
+                            "x": "2024-10-05",
+                            "y": 2.1
+                        }
+                    ]
+                },
+                "averageElo": 1468.55,
+                "togetherStats": false,
+                "comments": null,
+                "commentsTotal": 0,
+                "defaultParams": {
+                    "period": "current",
+                    "gameType": "all",
+                    "tournamentType": "fsm",
+                    "limit": 10
+                },
+                "urlParams": {
+                    "period": "current",
+                    "gameType": "all",
+                    "tournamentType": "fsm",
+                    "limit": 10,
+                    "page": 1
+                },
+                "tab": "history",
+                "rewardsOpened": "",
+                "playerStatsOpened": ""
+            }
+        },
+        "__N_SSP": true
+    },
+    "page": "/stats/[sid]",
+    "query": {
+        "tab": "history",
+        "sid": "6146"
+    },
+    "buildId": "DoA-ug7qpNaLLU2PyiJzb",
+    "isFallback": false,
+    "gssp": true,
+    "scriptLoader": []
+}</script>
+</body>
+</html>
