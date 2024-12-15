@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История ELO</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Подключаем библиотеку для графиков -->
+</head>
+<body>
+    <h1>История ELO игрока</h1>
+
+    <!-- Форма для ввода ID игрока -->
+    <form method="GET" action="{% url 'player_elo_graph' %}">
+        <label for="player_id">Введите ID игрока:</label>
+        <input type="text" id="player_id" name="player_id" required>
+        <button type="submit">Получить график</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">Ошибка: {{ error }}</p>
+    {% elif player_id %}
+        <h2>График ELO игрока {{ player_id }}</h2>
+        <canvas id="eloChart" width="400" height="200"></canvas>
+        <script>
+            // Печать данных для отладки
+            console.log("Даты:", {{ dates_json|safe }});
+            console.log("ELO:", {{ elo_values_json|safe }});
+
+            var ctx = document.getElementById('eloChart').getContext('2d');
+            var eloChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: {{ dates_json|safe }},  // Используем переданные данные для оси X
+                    datasets: [{
+                        label: 'История ELO',
+                        data: {{ elo_values_json|safe }},  // Используем переданные данные для оси Y
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            type: 'category',  // Используем категории для оси X (даты)
+                        },
+                        y: {
+                            beginAtZero: true,  // Ось Y начинается с 0
+                        }
+                    }
+                }
+            });
+        </script>
+    {% endif %}
+</body>
+</html>
