@@ -1,6 +1,6 @@
 # scraper/views.py
 from django.shortcuts import render
-from .services.gomafia_scraper import *
+from .db.database import *
 
 
 def index(request):
@@ -11,14 +11,12 @@ def player_tournaments(request):
     tournaments = []
     player_id = None
     error = None
-
+    database = DatabaseManager()
     if request.method == 'POST':
         player_id = request.POST.get('player_id')
         if player_id:
             try:
-                scraper = PlayerScraper(player_id)
-                scraper.get_player_tournaments()
-                tournaments = scraper.tournaments  # Передача данных в переменную
+                tournaments = database.get_tournaments_by_user_id(player_id)
             except Exception as e:
                 error = f"Ошибка получения данных: {str(e)}"
         else:
@@ -32,23 +30,29 @@ def player_tournaments(request):
 
 
 def player_elo_graph(request):
-    player_id = request.GET.get('player_id')  # Получаем ID игрока из GET-параметра
+    database = DatabaseManager()
     error = None
     dates_json = []
     elo_values_json = []
 
+    player_id = request.GET.get('player_id')  # Получаем ID игрока из GET-запроса
+
     if player_id:
         try:
-            player_id = int(player_id)  # Убедимся, что ID является числом
-            scraper = PlayerScraper(player_id)
-            scraper.get_player_tournaments()  # Получаем данные о турнирах
-            elo_history = scraper.get_elo_history()
-            # Извлекаем даты и значения ELO
-            dates_json = [entry['date'] for entry in elo_history]
-            elo_values_json = [entry['elo'] for entry in elo_history]
+            player_id = int(player_id)  # Преобразуем ID в число
+            elo_data = database.get_elo_changes_by_date(int(player_id))  # Получаем данные эло
+            print(elo_data)
 
-        except Exception as e:
-            error = "Данный игрок не участвовал в турнирах ФСМ, либо его не существует."  # Если ошибка — передаем её в шаблон
+            # Начальное значение эло
+            current_elo = 1000
+
+            # Обработка изменений по эло
+            for date, elo_change in elo_data:
+                dates_json.append(date)
+                current_elo += elo_change  # Корректируем эло
+                elo_values_json.append(current_elo)
+        except ValueError:
+            error = "Неверный формат ID игрока. Пожалуйста, введите число."
 
     return render(request, 'scraper/player_elo_graph.html', {
         'player_id': player_id,

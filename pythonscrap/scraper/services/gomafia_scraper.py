@@ -93,24 +93,6 @@ class PlayerScraper:
             self.extract_next_data()
         self.parse_tournaments()
 
-    def get_elo_history(self):
-        """
-        Возвращает историю изменений ELO в формате:
-        [
-            {"date": "2023-01-01", "elo": 1500},
-            {"date": "2023-02-01", "elo": 1520},
-            ...
-        ]
-        """
-        elo_history = []
-        for tournament in self.tournaments:
-            elo_history.append({
-                "date": tournament["date_end"],  # Используем дату окончания турнира
-                "elo": tournament["elo"]
-            })
-        print(sorted(elo_history, key=lambda x: x["date"]))
-        return sorted(elo_history, key=lambda x: x["date"])  # Сортировка по дате
-
     def extract_data(self):
         # Данные о пользователе (ключ 'user' из структуры serverData)
         user_data = self.next_data[0]['props']['pageProps']['serverData']['user']
@@ -163,14 +145,9 @@ def simplify_dict(d):
         # Если это не список и не словарь, оставляем как есть
         return d
 
+
 # if __name__ == "__main__":
-#     player_id = 6146  # Пример ID игрока
-#     scraper = PlayerScraper(player_id)
+#     scraper = PlayerScraper(6146)
 #     scraper.get_player_tournaments()
-#     output_file = "gomafia_page.html"
-#     with open(output_file, "w", encoding="utf-8") as file:
-#         data = scraper.next_data[1].copy()
-#         d = simplify_dict(data)
-#         file.write(str(d))
-#     print(scraper.get_elo_history())
-#     print(scraper.tournaments)
+#     user_data, tournaments_data, games_data = scraper.extract_data()
+#     print(tournaments_data)
