@@ -41,7 +41,7 @@ class DatabaseManager:
             is_paid INTEGER,
             is_can_comment INTEGER,
             since INTEGER,
-            avatar_link TEXT
+            avatar_link TEXT DEFAULT 'Аватар отсутствует'
         );
         """)
         cursor.execute(""" 
@@ -103,22 +103,24 @@ class DatabaseManager:
         """, user_data)
 
         # Вставляем игры
-        for game in games_data:
-            game['user_id'] = user_data['id']
-            cursor.execute(""" 
-            INSERT INTO games (user_id, role, role_translate, place, win, win_translate, elo) 
-            VALUES (:user_id, :role, :role_translate, :place, :win, :win_translate, :elo)
-            """, game)
+        if games_data is not []:
+            for game in games_data:
+                game['user_id'] = user_data['id']
+                cursor.execute(""" 
+                INSERT INTO games (user_id, role, role_translate, place, win, win_translate, elo) 
+                VALUES (:user_id, :role, :role_translate, :place, :win, :win_translate, :elo)
+                """, game)
 
         # Вставляем турниры
-        for tournament in tournaments_data:
-            tournament['user_id'] = user_data['id']
-            cursor.execute(""" 
-            INSERT INTO tournaments (user_id, title, date_start, date_end, country_translate, 
-            city_translate, place, gg, elo) 
-            VALUES (:user_id, :title, :date_start, :date_end, :country_translate, 
-            :city_translate, :place, :gg, :elo)
-            """, tournament)
+        if tournaments_data is not []:
+            for tournament in tournaments_data:
+                tournament['user_id'] = user_data['id']
+                cursor.execute(""" 
+                INSERT INTO tournaments (user_id, title, date_start, date_end, country_translate, 
+                city_translate, place, gg, elo) 
+                VALUES (:user_id, :title, :date_start, :date_end, :country_translate, 
+                :city_translate, :place, :gg, :elo)
+                """, tournament)
 
         # Подтверждаем транзакцию
         self._conn.commit()
@@ -182,6 +184,23 @@ class DatabaseManager:
 
         return tournaments
 
+    def is_player_exists(self, player_id: int) -> bool:
+        """Проверяет, существует ли игрок с данным ID в базе данных."""
+        cursor = self._conn.cursor()
+
+        # Выполняем запрос на проверку наличия игрока с заданным ID
+        cursor.execute("SELECT 1 FROM users WHERE id = ?", (player_id,))
+        result = cursor.fetchone()
+
+        # Если результат не пустой, значит игрок найден
+        return result is not None
+
+    def add_player_from_id(self, player_id):
+        scraper = PlayerScraper(int(player_id))
+        scraper.get_player_tournaments()
+        user_data, tournaments_data, games_data = scraper.extract_data()
+        self.insert_user_and_related_data(user_data, tournaments_data, games_data)
+
     def close(self):
         """Закрыть соединение с базой данных."""
         if self._conn:
@@ -189,14 +208,6 @@ class DatabaseManager:
             print("Соединение с базой данных закрыто.")
 
 # if __name__ == "__main__":
-#     player_id = 6146  # Пример ID игрока
-#     scraper = PlayerScraper(player_id)
-#     scraper.get_player_tournaments()
-#     userinfo, history_of_tournaments, history_of_games = scraper.extract_data()
-#
+#     player_id = 6145  # Пример ID игрока
 #     database = DatabaseManager()
-#     database.insert_user_and_related_data(userinfo, history_of_tournaments, history_of_games)
-#     print(database.get_elo_changes_by_date(player_id))
-#
-#     # Закрываем соединение с базой данных
-#     database.close()
+#     print(database.is_player_exists(player_id))

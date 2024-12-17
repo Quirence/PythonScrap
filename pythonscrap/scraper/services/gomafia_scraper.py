@@ -96,36 +96,40 @@ class PlayerScraper:
     def extract_data(self):
         # Данные о пользователе (ключ 'user' из структуры serverData)
         user_data = self.next_data[0]['props']['pageProps']['serverData']['user']
+        if user_data.get('avatar_link') is None:
+            user_data['avatar_link'] = 'Аватар отсутствует'
+        print(user_data)
         tournaments_data = []
         games_data = []
         for data in self.next_data:
             # Данные о турнирах (ключ 'history' и 'victories' из структуры serverData)
             if 'history' in data['props']['pageProps']['serverData']:
                 tournament_history = data['props']['pageProps']['serverData']['history']
-                for tournament in tournament_history:
-                    tournaments_data.append({
-                        'id': tournament['id'],
-                        'title': tournament['title'],
-                        'date_start': tournament['date_start'],
-                        'date_end': tournament['date_end'],
-                        'country_translate': tournament['country_translate'],
-                        'city_translate': tournament['city_translate'],
-                        'place': tournament['place'],
-                        'gg': tournament['gg'],
-                        'elo': tournament['elo']
-                    })
+                if tournament_history is not None:
+                    for tournament in tournament_history:
+                        tournaments_data.append({
+                            'id': tournament['id'],
+                            'title': tournament['title'],
+                            'date_start': tournament['date_start'],
+                            'date_end': tournament['date_end'],
+                            'country_translate': tournament['country_translate'],
+                            'city_translate': tournament['city_translate'],
+                            'place': tournament['place'],
+                            'gg': tournament['gg'],
+                            'elo': tournament['elo']
+                        })
 
-                    # Данные обо всех играх из всех турниров (ключ 'games' в 'history' в serverData)
-                    if 'games' in tournament:
-                        for game in tournament['games']:
-                            games_data.append({
-                                'role': game['role'],
-                                'role_translate': game['role_translate'],
-                                'place': game['place'],
-                                'win': game['win'],
-                                'win_translate': game['win_translate'],
-                                'elo': game['elo']
-                            })
+                        # Данные обо всех играх из всех турниров (ключ 'games' в 'history' в serverData)
+                        if 'games' in tournament:
+                            for game in tournament['games']:
+                                games_data.append({
+                                    'role': game['role'],
+                                    'role_translate': game['role_translate'],
+                                    'place': game['place'],
+                                    'win': game['win'],
+                                    'win_translate': game['win_translate'],
+                                    'elo': game['elo']
+                                })
 
         return user_data, tournaments_data, games_data
 
@@ -144,7 +148,6 @@ def simplify_dict(d):
     else:
         # Если это не список и не словарь, оставляем как есть
         return d
-
 
 # if __name__ == "__main__":
 #     scraper = PlayerScraper(6146)
