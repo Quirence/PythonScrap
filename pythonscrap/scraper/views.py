@@ -1,6 +1,6 @@
 # scraper/views.py
 from django.shortcuts import render
-from .db.database import *
+from scraper.db.database import *
 
 
 def index(request):
