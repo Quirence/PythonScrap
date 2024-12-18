@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+        image: python:3.10-slim
+        container_name: django_app
+        build: .
+        volumes:
+                - /python-servers/PythonScrap/volumes/data:/app/pythonscrap/scraper/db/
+        ports:
+                - "8000:8000"  # Открываем порт для доступа
+        environment:
+                - PYTHONUNBUFFERED=1  # Отключение буферизации для логов
