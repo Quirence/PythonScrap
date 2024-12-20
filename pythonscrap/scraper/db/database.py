@@ -166,6 +166,30 @@ class DatabaseManager:
         user_data, tournaments_data, games_data = scraper.extract_data()
         self.insert_user_and_related_data(user_data, tournaments_data, games_data)
 
+    def get_tournament_count_by_city(self) -> List[Dict]:
+        """Получает количество турниров по городам."""
+        with self._conn as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT city_translate, COUNT(*) as count
+            FROM tournaments
+            GROUP BY city_translate
+            ORDER BY count DESC
+            """)
+            return [{"city": row["city_translate"], "count": row["count"]} for row in cursor.fetchall()]
+
+    def get_tournament_load_by_date(self) -> List[Dict]:
+        """Получает нагрузку по количеству турниров на каждую дату."""
+        with self._conn as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT date_start, COUNT(*) as count
+            FROM tournaments
+            GROUP BY date_start
+            ORDER BY count DESC
+            """)
+            return [{"date": row["date_start"], "count": row["count"]} for row in cursor.fetchall()]
+
     def close(self):
         """Закрыть соединение с базой данных."""
         if self._conn:

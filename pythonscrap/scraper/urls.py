@@ -5,4 +5,5 @@ urlpatterns = [
     path('player_tournaments/', views.player_tournaments, name='player_tournaments'),
     path('player/elo-chart/', views.player_elo_graph, name='player_elo_graph'),
     path('', views.index, name='index'),
+    path('stats/', views.statistics_view, name='stats'),
 ]

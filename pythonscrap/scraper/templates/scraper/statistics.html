@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .chart-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Статистика сайта</h1>
+    <div class="chart-container">
+        <canvas id="cityChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="dateChart"></canvas>
+    </div>
+
+    <script>
+        // Получаем данные из представления
+        const cityData = JSON.parse('{{ cities_json|safe }}');
+        const dateData = JSON.parse('{{ dates_json|safe }}');
+
+        // Диаграмма по городам
+        const cityCtx = document.getElementById('cityChart').getContext('2d');
+        new Chart(cityCtx, {
+            type: 'bar',
+            data: {
+                labels: cityData.map(data => data.city),
+                datasets: [{
+                    label: 'Количество турниров',
+                    data: cityData.map(data => data.count),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Диаграмма по датам
+        const dateCtx = document.getElementById('dateChart').getContext('2d');
+        new Chart(dateCtx, {
+            type: 'line',
+            data: {
+                labels: dateData.map(data => data.date),
+                datasets: [{
+                    label: 'Количество турниров',
+                    data: dateData.map(data => data.count),
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

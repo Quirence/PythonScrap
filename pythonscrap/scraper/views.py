@@ -1,6 +1,8 @@
 # scraper/views.py
 from django.shortcuts import render
 from scraper.db.database import *
+from django.utils.safestring import mark_safe
+import json
 
 
 def index(request):
@@ -76,4 +78,21 @@ def player_elo_graph(request):
         'dates_json': dates_json,
         'elo_values_json': elo_values_json,
         'error': error
+    })
+
+
+def statistics_view(request):
+    db = DatabaseManager()
+
+    # Получение данных для статистики
+    city_data = db.get_tournament_count_by_city()
+    date_data = db.get_tournament_load_by_date()
+
+    # Форматируем данные для передачи в шаблон
+    cities_json = json.dumps([{"city": item["city"], "count": item["count"]} for item in city_data])
+    dates_json = json.dumps([{"date": item["date"], "count": item["count"]} for item in date_data])
+
+    return render(request, 'scraper/statistics.html', {
+        'cities_json': mark_safe(cities_json),
+        'dates_json': mark_safe(dates_json),
     })
