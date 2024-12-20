@@ -163,8 +163,12 @@ class DatabaseManager:
         """Добавляет игрока в базу данных на основе ID."""
         scraper = PlayerScraper(int(player_id))
         scraper.get_player_tournaments()
-        user_data, tournaments_data, games_data = scraper.extract_data()
-        self.insert_user_and_related_data(user_data, tournaments_data, games_data)
+        try:
+            user_data, tournaments_data, games_data = scraper.extract_data()
+            self.insert_user_and_related_data(user_data, tournaments_data, games_data)
+            return {"status": "success"}
+        except Exception:
+            return {"status": "error"}
 
     def get_tournament_count_by_city(self) -> List[Dict]:
         """Получает количество турниров по городам."""

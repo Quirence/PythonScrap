@@ -1,19 +1,20 @@
-# Используем базовый образ Python 3.10
-FROM python:3.10-slim
+# Используем полный образ Python
+FROM python:3.10
 
-# Устанавливаем рабочую директорию внутри контейнера
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем файл зависимостей и устанавливаем их
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# Копируем файлы проекта в контейнер
+COPY . /app
 
-# Копируем проект в контейнер
-COPY ./ ./
+# Устанавливаем зависимости
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Устанавливаем переменную среды, чтобы Python не буферизовал вывод
-ENV PYTHONUNBUFFERED 1
+# Открываем порт для Django
+EXPOSE 8000
 
-# Команда по умолчанию: запуск Django-сервера
+# Переходим в папку с manage.py перед запуском
 WORKDIR /app/pythonscrap
+
+# Команда для запуска Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

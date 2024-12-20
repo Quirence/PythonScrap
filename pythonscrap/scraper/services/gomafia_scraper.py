@@ -20,7 +20,7 @@ class PlayerScraper:
 
     def fetch_player_html(self, search_number=1):
         """
-        Получает HTML-страницу для игрока.
+        Получает HTML-страницу для игрока и проверяет, существует ли он.
         """
         url = f"{self.BASE_URL}{self.player_id}{self.SEARCH_URL}{search_number}"
         headers = {
@@ -31,6 +31,10 @@ class PlayerScraper:
             raise Exception(f"Ошибка при запросе данных для игрока {self.player_id}: HTTP {response.status_code}")
 
         self.html_content = response.text
+
+        # Проверка на наличие текста, указывающего на отсутствие игрока
+        if "Игрок не найден" in self.html_content or "No player found" in self.html_content:
+            raise Exception(f"Игрок с ID {self.player_id} не существует на сайте.")
 
     def extract_next_data(self):
         """
@@ -89,49 +93,76 @@ class PlayerScraper:
         self.fetch_player_html()
         self.extract_next_data()
         self.parse_history_number()
-        for i in range(2, math.ceil(
-                float(self.history_total) / 10) + 1):  # Цикл проходит столько раз, сколько страниц в поиске турниров
-            self.fetch_player_html(i)
-            self.extract_next_data()
+        if self.history_total is not None:
+            for i in range(2, math.ceil(
+                    float(
+                        self.history_total) / 10) + 1):  # Цикл проходит столько раз, сколько страниц в поиске турниров
+                self.fetch_player_html(i)
+                self.extract_next_data()
         self.parse_tournaments()
 
     def extract_data(self):
-        # Данные о пользователе (ключ 'user' из структуры serverData)
-        user_data = self.next_data[0]['props']['pageProps']['serverData']['user']
-        if user_data.get('avatar_link') is None:
+        """
+        Извлекает данные о пользователе, турнирах и играх с проверками на наличие ключей и данных.
+        """
+        user_data = self.next_data[0].get('props', {}).get('pageProps', {}).get('serverData', {}).get('user', {})
+
+        # Проверка, если данных о пользователе нет
+        if not user_data:
+            raise Exception(f"Данные о пользователе для игрока с ID {self.player_id} не найдены.")
+
+        # Обрабатываем отсутствие аватара
+        avatar_link = user_data.get('avatar_link', None)
+        if avatar_link is None:
             user_data['avatar_link'] = 'Аватар отсутствует'
-        print(user_data)
+
+        print(f"Данные о пользователе: {user_data}")
+
         tournaments_data = []
         games_data = []
-        for data in self.next_data:
-            # Данные о турнирах (ключ 'history' и 'victories' из структуры serverData)
-            if 'history' in data['props']['pageProps']['serverData']:
-                tournament_history = data['props']['pageProps']['serverData']['history']
-                if tournament_history is not None:
-                    for tournament in tournament_history:
-                        tournaments_data.append({
-                            'id': tournament['id'],
-                            'title': tournament['title'],
-                            'date_start': tournament['date_start'],
-                            'date_end': tournament['date_end'],
-                            'country_translate': tournament['country_translate'],
-                            'city_translate': tournament['city_translate'],
-                            'place': tournament['place'],
-                            'gg': tournament['gg'],
-                            'elo': tournament['elo']
-                        })
 
-                        # Данные обо всех играх из всех турниров (ключ 'games' в 'history' в serverData)
-                        if 'games' in tournament:
-                            for game in tournament['games']:
-                                games_data.append({
-                                    'role': game['role'],
-                                    'role_translate': game['role_translate'],
-                                    'place': game['place'],
-                                    'win': game['win'],
-                                    'win_translate': game['win_translate'],
-                                    'elo': game['elo']
-                                })
+        # Проверяем наличие истории турниров
+        for data in self.next_data:
+            server_data = data.get('props', {}).get('pageProps', {}).get('serverData', {})
+
+            if not server_data:
+                print(f"Нет данных для страницы с ID {self.player_id}. Пропускаем.")
+                continue
+
+            tournament_history = server_data.get('history', [])
+
+            # Если турниров нет, добавляем сообщение о том, что игрок не участвовал в турнирах
+            if not tournament_history:
+                print(f"Игрок с ID {self.player_id} не участвовал в турнирах.")
+                continue
+
+            for tournament in tournament_history:
+                tournament_info = {
+                    'id': tournament.get('id', 'Неизвестно'),
+                    'title': tournament.get('title', 'Неизвестно'),
+                    'date_start': tournament.get('date_start', 'Неизвестно'),
+                    'date_end': tournament.get('date_end', 'Неизвестно'),
+                    'country_translate': tournament.get('country_translate', 'Неизвестно'),
+                    'city_translate': tournament.get('city_translate', 'Неизвестно'),
+                    'place': tournament.get('place', 'Неизвестно'),
+                    'gg': tournament.get('gg', 'Неизвестно'),
+                    'elo': tournament.get('elo', 'Неизвестно')
+                }
+                tournaments_data.append(tournament_info)
+
+                # Данные о играх в турнире
+                games = tournament.get('games', [])
+                if games:
+                    for game in games:
+                        game_info = {
+                            'role': game.get('role', 'Неизвестно'),
+                            'role_translate': game.get('role_translate', 'Неизвестно'),
+                            'place': game.get('place', 'Неизвестно'),
+                            'win': game.get('win', 'Неизвестно'),
+                            'win_translate': game.get('win_translate', 'Неизвестно'),
+                            'elo': game.get('elo', 'Неизвестно')
+                        }
+                        games_data.append(game_info)
 
         return user_data, tournaments_data, games_data
 

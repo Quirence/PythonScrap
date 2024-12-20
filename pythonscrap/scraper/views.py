@@ -58,18 +58,21 @@ def player_elo_graph(request):
                     current_elo += elo_change  # Корректируем эло
                     elo_values_json.append(current_elo)
             else:
-                database.add_player_from_id(int(player_id))
-                elo_data = database.get_elo_changes_by_date(int(player_id))  # Получаем данные эло
-                print(elo_data)
+                status = database.add_player_from_id(int(player_id))
+                if status.get("status") == "success":
+                    elo_data = database.get_elo_changes_by_date(int(player_id))  # Получаем данные эло
+                    print(elo_data)
 
-                # Начальное значение эло
-                current_elo = 1000
+                    # Начальное значение эло
+                    current_elo = 1000
 
-                # Обработка изменений по эло
-                for date, elo_change in elo_data:
-                    dates_json.append(date)
-                    current_elo += elo_change  # Корректируем эло
-                    elo_values_json.append(current_elo)
+                    # Обработка изменений по эло
+                    for date, elo_change in elo_data:
+                        dates_json.append(date)
+                        current_elo += elo_change  # Корректируем эло
+                        elo_values_json.append(current_elo)
+                else:
+                    error = "Игрока с данным ID не существует, либо возникла ошибка при парсинге."
         except ValueError:
             error = "Неверный формат ID игрока. Пожалуйста, введите число."
 
