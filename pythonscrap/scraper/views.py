@@ -14,23 +14,33 @@ def player_tournaments(request):
     player_id = None
     error = None
     database = DatabaseManager()
+
     if request.method == 'POST':
-        player_id = request.POST.get('player_id')
-        if player_id:
+        new_player_id = request.POST.get('new_player_id')  # Получаем новый ID игрока
+        player_id = request.POST.get('player_id')  # Получаем ID из выпадающего списка
+
+        if new_player_id:  # Приоритет нового ID
             try:
-                if database.is_player_exists(int(player_id)):
-                    tournaments = database.get_tournaments_by_user_id(player_id)
-                else:
+                player_id = int(new_player_id)
+                if not database.is_player_exists(player_id):
                     database.add_player_from_id(player_id)
-                    tournaments = database.get_tournaments_by_user_id(player_id)
+                tournaments = database.get_tournaments_by_user_id(player_id)
+            except Exception as e:
+                error = f"Ошибка получения данных: {str(e)}"
+        elif player_id:  # Если введен только ID из списка
+            try:
+                player_id = int(player_id)
+                tournaments = database.get_tournaments_by_user_id(player_id)
             except Exception as e:
                 error = f"Ошибка получения данных: {str(e)}"
         else:
-            error = "ID игрока не может быть пустым."
+            error = "Выберите игрока или введите его ID."
 
+    users = database.get_users()  # Получаем список пользователей для выпадающего списка
     return render(request, 'scraper/player_tournaments.html', {
         'player_id': player_id,
         'tournaments': tournaments,
+        'users': users,
         'error': error,
     })
 

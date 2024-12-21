@@ -1,141 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Турниры игрока</title>
-    <style>
-        /* Общий стиль */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f8ff;
-            color: #333;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Турниры игрока</title>
+   <style>
+       /* Общий стиль */
+       body {
+           font-family: Arial, sans-serif;
+           margin: 20px;
+           background-color: #f0f8ff;
+           color: #333;
+       }
 
-        h1, h2 {
-            text-align: center;
-            color: #003366;
-        }
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: #e6f7ff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+       h1, h2 {
+           text-align: center;
+           color: #003366;
+       }
 
-        label {
-            font-weight: bold;
-        }
 
-        input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #99ccff;
-            border-radius: 4px;
-        }
+       form {
+           max-width: 400px;
+           margin: 0 auto;
+           text-align: center;
+           background-color: #e6f7ff;
+           padding: 20px;
+           border-radius: 8px;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       }
 
-        button {
-            background-color: #0066cc;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
 
-        button:hover {
-            background-color: #004c99;
-        }
+       label {
+           font-weight: bold;
+       }
 
-        .error {
-            color: #cc0000;
-            font-weight: bold;
-            text-align: center;
-        }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #ffffff;
-        }
+       select, input[type="text"] {
+           width: calc(100% - 22px);
+           padding: 10px;
+           margin: 10px 0;
+           border: 1px solid #99ccff;
+           border-radius: 4px;
+           background-color: #ffffff;
+       }
 
-        th, td {
-            border: 1px solid #99ccff;
-            padding: 10px;
-            text-align: left;
-        }
 
-        th {
-            background-color: #0066cc;
-            color: white;
-        }
+       button {
+           background-color: #0066cc;
+           color: #fff;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
 
-        tr:nth-child(even) {
-            background-color: #e6f7ff;
-        }
 
-        tr:hover {
-            background-color: #d1e7ff;
-        }
+       button:hover {
+           background-color: #004c99;
+       }
 
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 600px) {
-            table, th, td {
-                font-size: 14px;
-            }
-            form {
-                padding: 10px;
-            }
-        }
-    </style>
+
+       .error {
+           color: #cc0000;
+           font-weight: bold;
+           text-align: center;
+       }
+
+
+       table {
+           width: 100%;
+           border-collapse: collapse;
+           margin-top: 20px;
+           background-color: #ffffff;
+       }
+
+
+       th, td {
+           border: 1px solid #99ccff;
+           padding: 10px;
+           text-align: left;
+       }
+
+
+       th {
+           background-color: #0066cc;
+           color: white;
+       }
+
+
+       tr:nth-child(even) {
+           background-color: #e6f7ff;
+       }
+
+
+       tr:hover {
+           background-color: #d1e7ff;
+       }
+
+
+       /* Адаптивность для мобильных устройств */
+       @media (max-width: 600px) {
+           table, th, td {
+               font-size: 14px;
+           }
+           form {
+               padding: 10px;
+           }
+       }
+   </style>
 </head>
 <body>
-    <h1>Турниры игрока</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="player_id">ID игрока:</label>
-        <input type="text" id="player_id" name="player_id" value="{{ player_id|default:'' }}">
-        <button type="submit">Показать</button>
-    </form>
+   <h1>Турниры игрока</h1>
+   <form method="POST">
+       {% csrf_token %}
+       <label for="player_select">Выберите игрока:</label>
+       <select id="player_select" name="player_id">
+           <option value="">Выберите игрока</option>
+           {% for user in users %}
+           <option value="{{ user.id }}" {% if player_id == user.id|stringformat:"s" %}selected{% endif %}>
+               {{ user.login }} (ID: {{ user.id }})
+           </option>
+           {% endfor %}
+       </select>
 
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
 
-    {% if tournaments %}
-        <h2>Список турниров</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Название</th>
-                    <th>Дата начала</th>
-                    <th>Дата окончания</th>
-                    <th>Место</th>
-                    <th>ELO</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for tournament in tournaments %}
-                <tr>
-                    <td>{{ tournament.id }}</td>
-                    <td>{{ tournament.title }}</td>
-                    <td>{{ tournament.date_start }}</td>
-                    <td>{{ tournament.date_end }}</td>
-                    <td>{{ tournament.place }}</td>
-                    <td>{{ tournament.elo }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
+       <p><strong>Или введите его ID:</strong></p>
+       <input type="text" id="player_input" name="new_player_id" placeholder="Введите ID игрока">
+
+
+       <button type="submit">Показать</button>
+   </form>
+
+
+   {% if error %}
+       <p class="error">{{ error }}</p>
+   {% endif %}
+
+
+   {% if tournaments %}
+       <h2>Список турниров</h2>
+       <table>
+           <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>Название</th>
+                   <th>Дата начала</th>
+                   <th>Дата окончания</th>
+                   <th>Место</th>
+                   <th>ELO</th>
+               </tr>
+           </thead>
+           <tbody>
+               {% for tournament in tournaments %}
+               <tr>
+                   <td>{{ tournament.id }}</td>
+                   <td>{{ tournament.title }}</td>
+                   <td>{{ tournament.date_start }}</td>
+                   <td>{{ tournament.date_end }}</td>
+                   <td>{{ tournament.place }}</td>
+                   <td>{{ tournament.elo }}</td>
+               </tr>
+               {% endfor %}
+           </tbody>
+       </table>
+   {% endif %}
 </body>
 </html>
