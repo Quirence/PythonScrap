@@ -10,11 +10,11 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_HOST=${POSTGRES_HOST}
-      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_username
+      - POSTGRES_PASSWORD=your_password
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
     depends_on:
       - db
     env_file:
@@ -23,9 +23,9 @@ services:
   db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_username
+      - POSTGRES_PASSWORD=your_password
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:

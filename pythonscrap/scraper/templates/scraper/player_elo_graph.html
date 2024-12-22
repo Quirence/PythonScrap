@@ -30,19 +30,23 @@
         }
         form {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            flex-direction: column;
+            gap: 15px;
             margin-bottom: 20px;
         }
-        input[type="text"] {
+        label {
+            font-weight: bold;
+        }
+        select, input[type="text"] {
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
             outline: none;
             transition: border-color 0.3s ease;
+            width: 100%;
         }
-        input[type="text"]:focus {
+        select:focus, input[type="text"]:focus {
             border-color: #4A90E2;
             box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
         }
@@ -86,9 +90,21 @@
     <div class="container">
         <h1>График Эло Игрока</h1>
 
-        <!-- Форма для ввода ID игрока -->
+        <!-- Форма для выбора игрока -->
         <form method="get">
-            <input type="text" name="player_id" placeholder="Введите ID игрока" value="{{ player_id }}">
+            <label for="player_select">Выберите игрока:</label>
+            <select id="player_select" name="player_id" onchange="toggleManualInput(this)">
+                <option value="">Выберите игрока</option>
+                <option value="manual">Ввести ID вручную</option>
+                {% for user in users %}
+                <option value="{{ user.id }}" {% if player_id == user.id|stringformat:"s" %}selected{% endif %}>
+                    {{ user.login }} (ID: {{ user.id }})
+                </option>
+                {% endfor %}
+            </select>
+
+            <input type="text" id="manual_player_id" name="player_id" placeholder="Введите ID игрока" style="display: none;" value="{{ player_id }}">
+
             <button type="submit">Показать график</button>
         </form>
 
@@ -173,6 +189,18 @@
         {% if dates_json %}
             renderChart(datesJson, eloValuesJson);
         {% endif %}
+
+        // Функция для отображения поля ввода вручную
+        function toggleManualInput(select) {
+            const manualInput = document.getElementById('manual_player_id');
+            if (select.value === 'manual') {
+                manualInput.style.display = 'block';
+                manualInput.value = ''; // Очищаем значение, если выбрано ручное ввод
+            } else {
+                manualInput.style.display = 'none';
+                manualInput.value = select.value;
+            }
+        }
     </script>
 </body>
 </html>

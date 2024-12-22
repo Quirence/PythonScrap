@@ -50,9 +50,10 @@ def player_elo_graph(request):
     error = None
     dates_json = []
     elo_values_json = []
-
+    print(request)
     player_id = request.GET.get('player_id')  # Получаем ID игрока из GET-запроса
-
+    users = database.get_users()  # Получаем список пользователей для выпадающего списка
+    print(player_id)
     if player_id:
         try:
             if database.is_player_exists(int(player_id)):
@@ -90,6 +91,7 @@ def player_elo_graph(request):
         'player_id': player_id,
         'dates_json': dates_json,
         'elo_values_json': elo_values_json,
+        'users': users,
         'error': error
     })
 
@@ -102,8 +104,10 @@ def statistics_view(request):
     date_data = db.get_tournament_load_by_date()
 
     # Форматируем данные для передачи в шаблон
-    cities_json = json.dumps([{"city": item["city"], "count": item["count"]} for item in city_data])
-    dates_json = json.dumps([{"date": item["date"], "count": item["count"]} for item in date_data])
+    print(city_data)
+    print(date_data)
+    cities_json = json.dumps(city_data)  # Уже в нужном формате [{"city": ..., "count": ...}]
+    dates_json = json.dumps(date_data)  # Уже в нужном формате [{"date": ..., "count": ...}]
 
     return render(request, 'scraper/statistics.html', {
         'cities_json': mark_safe(cities_json),

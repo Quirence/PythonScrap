@@ -1,42 +1,29 @@
 import os
-import psycopg2
-from psycopg2.extras import RealDictCursor
+import sqlite3
 from typing import List, Dict
 from scraper.services.gomafia_scraper import PlayerScraper
 
 
 class DatabaseManager:
     _instance = None
+    _db_name = 'user_data.db'
 
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls._instance._conn = cls._create_connection()
+            db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'user_data.db')
+            cls._instance._conn = sqlite3.connect(db_path, check_same_thread=False)
+            cls._instance._conn.row_factory = sqlite3.Row
             cls._instance._create_tables()
         return cls._instance
 
-    @staticmethod
-    def _create_connection():
-        """Создаёт соединение с базой данных PostgreSQL."""
-        try:
-            return psycopg2.connect(
-                dbname=os.getenv("POSTGRES_DB", "postgres"),
-                user=os.getenv("POSTGRES_USER", "postgres"),
-                password=os.getenv("POSTGRES_PASSWORD", "postgres"),
-                host=os.getenv("POSTGRES_HOST", "localhost"),
-                port=os.getenv("POSTGRES_PORT", "5432"),
-                cursor_factory=RealDictCursor
-            )
-        except Exception as e:
-            print("Ошибка подключения к базе данных:", str(e))
-            raise
-
     def _create_tables(self):
-        """Создаёт необходимые таблицы, если их ещё нет."""
-        with self._conn.cursor() as cursor:
+        """Создаём необходимые таблицы, если их ещё нет."""
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
-                id SERIAL PRIMARY KEY,
+                id INTEGER PRIMARY KEY,
                 club_id INTEGER,
                 login TEXT,
                 first_name TEXT,
@@ -48,16 +35,15 @@ class DatabaseManager:
                 elo REAL,
                 vk_id INTEGER,
                 referee_license INTEGER,
-                is_paid BOOLEAN,
-                is_can_comment BOOLEAN,
+                is_paid INTEGER,
+                is_can_comment INTEGER,
                 since INTEGER,
                 avatar_link TEXT DEFAULT 'Аватар отсутствует'
             );
             """)
-
             cursor.execute("""
             CREATE TABLE IF NOT EXISTS games (
-                id SERIAL PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER,
                 role TEXT,
                 role_translate TEXT,
@@ -68,10 +54,9 @@ class DatabaseManager:
                 FOREIGN KEY(user_id) REFERENCES users(id)
             );
             """)
-
             cursor.execute("""
             CREATE TABLE IF NOT EXISTS tournaments (
-                id SERIAL PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER,
                 title TEXT,
                 date_start TEXT,
@@ -84,13 +69,14 @@ class DatabaseManager:
                 FOREIGN KEY(user_id) REFERENCES users(id)
             );
             """)
-        self._conn.commit()
 
     def insert_user_and_related_data(self, user_data: Dict, tournaments_data: List[Dict], games_data: List[Dict]):
         """Добавление пользователя и связанных данных."""
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
+
             # Проверяем, существует ли пользователь с данным id
-            cursor.execute("SELECT id FROM users WHERE id = %s", (user_data['id'],))
+            cursor.execute("SELECT id FROM users WHERE id = ?", (user_data['id'],))
             existing_user = cursor.fetchone()
             if existing_user:
                 print(f"Пользователь с id {user_data['id']} уже существует в базе данных.")
@@ -101,9 +87,9 @@ class DatabaseManager:
             INSERT INTO users (id, club_id, login, first_name, last_name, date_registration,
                 icon_type, icon, gcoin, elo, vk_id, referee_license, is_paid, is_can_comment,
                 since, avatar_link) 
-            VALUES (%(id)s, %(club_id)s, %(login)s, %(first_name)s, %(last_name)s, %(date_registration)s,
-                %(icon_type)s, %(icon)s, %(gcoin)s, %(elo)s, %(vk_id)s, %(referee_license)s, %(is_paid)s, 
-                %(is_can_comment)s, %(since)s, %(avatar_link)s)
+            VALUES (:id, :club_id, :login, :first_name, :last_name, :date_registration,
+                :icon_type, :icon, :gcoin, :elo, :vk_id, :referee_license, :is_paid, 
+                :is_can_comment, :since, :avatar_link)
             """, user_data)
 
             # Вставляем игры
@@ -111,7 +97,7 @@ class DatabaseManager:
                 game['user_id'] = user_data['id']
                 cursor.execute("""
                 INSERT INTO games (user_id, role, role_translate, place, win, win_translate, elo)
-                VALUES (%(user_id)s, %(role)s, %(role_translate)s, %(place)s, %(win)s, %(win_translate)s, %(elo)s)
+                VALUES (:user_id, :role, :role_translate, :place, :win, :win_translate, :elo)
                 """, game)
 
             # Вставляем турниры
@@ -120,39 +106,57 @@ class DatabaseManager:
                 cursor.execute("""
                 INSERT INTO tournaments (user_id, title, date_start, date_end, country_translate,
                 city_translate, place, gg, elo) 
-                VALUES (%(user_id)s, %(title)s, %(date_start)s, %(date_end)s, %(country_translate)s,
-                %(city_translate)s, %(place)s, %(gg)s, %(elo)s)
+                VALUES (:user_id, :title, :date_start, :date_end, :country_translate,
+                :city_translate, :place, :gg, :elo)
                 """, tournament)
-
-        self._conn.commit()
 
     def get_elo_changes_by_date(self, player_id: int) -> List[tuple[str, float]]:
         """Получает массив изменений ЭЛО игрока по времени из турниров."""
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("""
             SELECT date_start, elo 
             FROM tournaments 
-            WHERE user_id = %s 
+            WHERE user_id = ? 
             ORDER BY date_start
             """, (player_id,))
             rows = cursor.fetchall()
-            return [(row['date_start'], row['elo']) for row in rows]
+            return [(row["date_start"], row["elo"]) for row in rows]
 
     def get_tournaments_by_user_id(self, user_id: int) -> List[Dict]:
         """Получает массив турниров по ID игрока."""
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("""
             SELECT id, title, date_start, date_end, country_translate, city_translate, place, gg, elo 
             FROM tournaments
-            WHERE user_id = %s
+            WHERE user_id = ?
             ORDER BY date_start
             """, (user_id,))
-            return cursor.fetchall()
+            rows = cursor.fetchall()
+            tournaments = [
+                {
+                    "id": row["id"],
+                    "title": row["title"],
+                    "date_start": row["date_start"],
+                    "date_end": row["date_end"],
+                    "country_translate": row["country_translate"],
+                    "city_translate": row["city_translate"],
+                    "place": row["place"],
+                    "gg": row["gg"],
+                    "elo": row["elo"]
+                }
+                for row in rows
+            ]
+            tournaments = sorted(tournaments, key=lambda x: int(x["id"]))
+
+            return tournaments
 
     def is_player_exists(self, player_id: int) -> bool:
         """Проверяет, существует ли игрок с данным ID в базе данных."""
-        with self._conn.cursor() as cursor:
-            cursor.execute("SELECT 1 FROM users WHERE id = %s", (player_id,))
+        with self._conn as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT 1 FROM users WHERE id = ?", (player_id,))
             return cursor.fetchone() is not None
 
     def add_player_from_id(self, player_id):
@@ -163,39 +167,41 @@ class DatabaseManager:
             user_data, tournaments_data, games_data = scraper.extract_data()
             self.insert_user_and_related_data(user_data, tournaments_data, games_data)
             return {"status": "success"}
-        except Exception as e:
-            print("Ошибка при добавлении игрока:", str(e))
+        except Exception:
             return {"status": "error"}
 
     def get_tournament_count_by_city(self) -> List[Dict]:
         """Получает количество турниров по городам."""
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("""
             SELECT city_translate, COUNT(*) as count
             FROM tournaments
             GROUP BY city_translate
             ORDER BY count DESC
             """)
-            return cursor.fetchall()
+            return [{"city": row["city_translate"], "count": row["count"]} for row in cursor.fetchall()]
 
     def get_tournament_load_by_date(self) -> List[Dict]:
         """Получает нагрузку по количеству турниров на каждую дату."""
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("""
             SELECT date_start, COUNT(*) as count
             FROM tournaments
             GROUP BY date_start
             ORDER BY count DESC
             """)
-            return cursor.fetchall()
+            return [{"date": row["date_start"], "count": row["count"]} for row in cursor.fetchall()]
 
     def get_users(self) -> List[Dict[str, str]]:
         """
         Возвращает список всех пользователей из базы данных.
         """
-        with self._conn.cursor() as cursor:
+        with self._conn as conn:
+            cursor = conn.cursor()
             cursor.execute("SELECT id, login FROM users ORDER BY login")
-            return cursor.fetchall()
+            return [{"id": row["id"], "login": row["login"]} for row in cursor.fetchall()]
 
     def close(self):
         """Закрыть соединение с базой данных."""
