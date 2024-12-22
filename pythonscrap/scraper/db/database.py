@@ -2,7 +2,7 @@ import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from typing import List, Dict
-from scraper.services.gomafia_scraper import PlayerScraper
+from ..services.gomafia_scraper import PlayerScraper
 
 
 class DatabaseManager:

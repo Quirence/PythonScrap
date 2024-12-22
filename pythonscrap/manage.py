@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from scraper.db.database import *
 
 
 def main():
@@ -19,4 +20,8 @@ def main():
 
 
 if __name__ == '__main__':
+    # database = DatabaseManager()
+    # for i in range(3000, 3500):
+    #     database.add_player_from_id(i)
+    # Раскомментировать для быстрого заполнения базы
     main()
