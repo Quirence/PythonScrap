@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>График Эло Игрока</title>
+    <!-- Подключаем библиотеку Chart.js для отображения графика -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f0f0f0, #d0d8e8);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #4A90E2;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            width: 100%;
+        }
+        select:focus, input[type="text"]:focus {
+            border-color: #4A90E2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-top: 40px;
+        }
+        .chart-container canvas {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>График Эло Игрока</h1>
+
+        <!-- Форма для выбора игрока -->
+        <form method="get">
+            <label for="player_select">Выберите игрока:</label>
+            <select id="player_select" name="player_id" onchange="toggleManualInput(this)">
+                <option value="">Выберите игрока</option>
+                <option value="manual">Ввести ID вручную</option>
+                {% for user in users %}
+                <option value="{{ user.id }}" {% if player_id == user.id|stringformat:"s" %}selected{% endif %}>
+                    {{ user.login }} (ID: {{ user.id }})
+                </option>
+                {% endfor %}
+            </select>
+
+            <input type="text" id="manual_player_id" name="player_id" placeholder="Введите ID игрока" style="display: none;" value="{{ player_id }}">
+
+            <button type="submit">Показать график</button>
+        </form>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <!-- Контейнер для графика -->
+        <div class="chart-container">
+            <canvas id="eloChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Данные для графика из Django
+        const datesJson = {{ dates_json|safe }};
+        const eloValuesJson = {{ elo_values_json|safe }};
+
+        // Функция для рендеринга графика
+        function renderChart(dates, eloValues) {
+            const ctx = document.getElementById('eloChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Эло игрока',
+                        data: eloValues,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgb(75, 192, 192)',
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Изменение Эло по датам',
+                            font: {
+                                size: 18
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw.toFixed(2);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Дата',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Эло',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Если на странице есть данные, рисуем график
+        {% if dates_json %}
+            renderChart(datesJson, eloValuesJson);
+        {% endif %}
+
+        // Функция для отображения поля ввода вручную
+        function toggleManualInput(select) {
+            const manualInput = document.getElementById('manual_player_id');
+            if (select.value === 'manual') {
+                manualInput.style.display = 'block';
+                manualInput.value = ''; // Очищаем значение, если выбрано ручное ввод
+            } else {
+                manualInput.style.display = 'none';
+                manualInput.value = select.value;
+            }
+        }
+    </script>
+</body>
+</html>

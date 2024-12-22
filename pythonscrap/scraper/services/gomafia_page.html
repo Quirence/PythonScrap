@@ -1,0 +1,193 @@
+{
+    'props': {  # dict
+        'pageProps': {  # dict
+            'session': None,  # NoneType
+            'serverData': {  # dict
+                'user': {  # dict
+                    'id': str,  # string
+                    'club_id': str,  # string
+                    'login': str,  # string
+                    'first_name': str,  # string
+                    'last_name': str,  # string
+                    'date_registration': str,  # string
+                    'icon_type': str,  # string
+                    'icon': str,  # string
+                    'gcoin': str,  # string
+                    'elo': str,  # string
+                    'vk_id': str,  # string
+                    'referee_license': str,  # string
+                    'is_paid': str,  # string
+                    'is_can_comment': str,  # string
+                    'since': str,  # string
+                    'avatar_link': str  # string
+                },
+                'stats': {  # dict
+                    'primary': {  # dict
+                        'mafia': int,  # int
+                        'red': int,  # int
+                        'don': int,  # int
+                        'sheriff': int,  # int
+                        'total_games': int  # int
+                    },
+                    'win_rate': {  # dict
+                        'mafia': {  # dict
+                            'win': {  # dict
+                                'value': int,  # int
+                                'percent': float  # float
+                            },
+                            'total': {  # dict
+                                'value': int  # int
+                            }
+                        },
+                        'red': {  # dict
+                            'win': {  # dict
+                                'value': int,  # int
+                                'percent': float  # float
+                            },
+                            'total': {  # dict
+                                'value': int  # int
+                            }
+                        },
+                        'don': {  # dict
+                            'win': {  # dict
+                                'value': int,  # int
+                                'percent': float  # float
+                            },
+                            'total': {  # dict
+                                'value': int  # int
+                            }
+                        },
+                        'sheriff': {  # dict
+                            'win': {  # dict
+                                'value': int,  # int
+                                'percent': float  # float
+                            },
+                            'total': {  # dict
+                                'value': int  # int
+                            }
+                        },
+                        'total_games': int,  # int
+                        'total_wins': {  # dict
+                            'value': int,  # int
+                            'percent': float  # float
+                        }
+                    },
+                    'win_strike': {  # dict
+                        'mafia': {  # dict
+                            'max': int  # int
+                        },
+                        'red': {  # dict
+                            'max': int  # int
+                        },
+                        'don': {  # dict
+                            'max': int  # int
+                        },
+                        'sheriff': {  # dict
+                            'max': int  # int
+                        }
+                    },
+                    'games_stats': {  # dict
+                        'average_points': float,  # float
+                        'prize_places': int  # int
+                    },
+                    'advanced_points': {  # dict
+                        'red': {  # dict
+                            'points': float,  # float
+                            'per_game': float  # float
+                        },
+                        'black': {  # dict
+                            'points': float,  # float
+                            'per_game': float  # float
+                        },
+                        'sheriff': {  # dict
+                            'points': float,  # float
+                            'per_game': float  # float
+                        }
+                    },
+                    'points_10_games': float  # float
+                },
+                'history': {  # dict
+                    'id': str,  # string
+                    'title': str,  # string
+                    'date_start': str,  # string
+                    'date_end': str,  # string
+                    'country_translate': str,  # string
+                    'city_translate': str,  # string
+                    'place': str,  # string
+                    'gg': str,  # string
+                    'elo': float,  # float
+                    'games': {  # dict
+                        'game_num': str,  # string
+                        'role': str,  # string
+                        'role_translate': str,  # string
+                        'place': str,  # string
+                        'win': str,  # string
+                        'win_translate': str,  # string
+                        'elo': float  # float
+                    }
+                },
+                'historyTotal': str,  # string
+                'victories': {  # dict
+                    'id': str,  # string
+                    'title': str,  # string
+                    'date_start': str,  # string (datetime)
+                    'place': str  # string
+                },
+                'chart': {  # dict
+                    'elo': {  # dict
+                        'id': str,  # string
+                        'title': str,  # string
+                        'x': str,  # string
+                        'y': float  # float
+                    },
+                    'elo_delta': {  # dict
+                        'title': str,  # string
+                        'x': str,  # string
+                        'y': float  # float
+                    },
+                    'sum': {  # dict
+                        'title': str,  # string
+                        'x': str,  # string
+                        'y': float  # float
+                    },
+                    'sum_extra': {  # dict
+                        'title': str,  # string
+                        'x': str,  # string
+                        'y': float  # float
+                    }
+                },
+                'averageElo': float,  # float
+                'togetherStats': bool,  # bool
+                'comments': None,  # NoneType
+                'commentsTotal': int,  # int
+                'defaultParams': {  # dict
+                    'period': str,  # string
+                    'gameType': str,  # string
+                    'tournamentType': str,  # string
+                    'limit': int  # int
+                },
+                'urlParams': {  # dict
+                    'period': str,  # string
+                    'gameType': str,  # string
+                    'tournamentType': str,  # string
+                    'limit': int,  # int
+                    'page': str  # string
+                },
+                'tab': str,  # string
+                'rewardsOpened': str,  # string
+                'playerStatsOpened': str  # string
+            },
+            '__N_SSP': bool  # bool
+        }
+    },
+    'page': str,  # string
+    'query': {  # dict
+        'tab': str,  # string
+        'page': str,  # string
+        'sid': str  # string
+    },
+    'buildId': str,  # string
+    'isFallback': bool,  # bool
+    'gssp': bool,  # bool
+    'scriptLoader': None  # NoneType
+}
