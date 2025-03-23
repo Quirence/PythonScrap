@@ -1,0 +1,85 @@
+-- Таблица пользователей
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,                    -- Уникальный идентификатор пользователя
+    club_id INTEGER,                           -- Идентификатор клуба
+    login TEXT,                                -- Логин
+    first_name TEXT,                           -- Имя
+    last_name TEXT,                            -- Фамилия
+    date_registration DATETIME,               -- Дата регистрации
+    icon_type TEXT,                            -- Тип иконки
+    icon TEXT,                                 -- Ссылка на иконку
+    gcoin INTEGER,                             -- Количество игровых монет
+    elo REAL,                                  -- Рейтинг ELO
+    vk_id TEXT,                                -- ID ВКонтакте
+    referee_license BOOLEAN,                   -- Лицензия рефери
+    is_paid BOOLEAN,                           -- Платный аккаунт (0 или 1)
+    is_can_comment BOOLEAN,                    -- Возможность комментировать (0 или 1)
+    since TEXT,                                -- Год начала участия
+    avatar_link TEXT,                          -- Ссылка на аватар
+    average_elo REAL                           -- Средний рейтинг ELO
+);
+
+-- Таблица статистики игр
+CREATE TABLE stats (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,      -- Уникальный идентификатор записи статистики
+    user_id INTEGER,                           -- ID пользователя (внешний ключ)
+    role TEXT,                                 -- Роль (например, mafia, red)
+    total_games INTEGER,                       -- Общее количество игр
+    wins INTEGER,                              -- Количество побед
+    win_percent REAL,                          -- Процент побед
+    max_win_streak INTEGER,                    -- Максимальная серия побед
+    average_points REAL,                       -- Среднее количество очков за игру
+    prize_places INTEGER,                      -- Количество призовых мест
+    FOREIGN KEY (user_id) REFERENCES users(id) -- Внешний ключ на пользователя
+);
+
+-- Таблица турниров
+CREATE TABLE tournaments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,      -- Уникальный идентификатор турнира
+    user_id INTEGER,                           -- ID пользователя (внешний ключ)
+    title TEXT,                                -- Название турнира
+    date_start DATE,                           -- Дата начала
+    date_end DATE,                             -- Дата окончания
+    country TEXT,                              -- Страна проведения
+    city TEXT,                                 -- Город проведения
+    place INTEGER,                             -- Итоговое место
+    gg REAL,                                   -- Количество очков GG
+    elo_change INTEGER,                        -- Изменение рейтинга ELO
+    FOREIGN KEY (user_id) REFERENCES users(id) -- Внешний ключ на пользователя
+);
+
+-- Таблица игр в турнирах
+CREATE TABLE tournament_games (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,      -- Уникальный идентификатор игры
+    tournament_id INTEGER,                     -- ID турнира (внешний ключ)
+    game_num INTEGER,                          -- Номер игры в турнире
+    role TEXT,                                 -- Роль игрока (mafia, red, sheriff, don)
+    place INTEGER,                             -- Место в игре
+    win TEXT,                                  -- Исход игры (win/lose)
+    win_translate TEXT,                        -- Исход игры (перевод, например "Мирные")
+    elo_change INTEGER,                        -- Изменение рейтинга ELO
+    FOREIGN KEY (tournament_id) REFERENCES tournaments(id) -- Внешний ключ на турнир
+);
+
+-- Таблица изменений рейтингов (история)
+CREATE TABLE elo_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,      -- Уникальный идентификатор записи
+    user_id INTEGER,                           -- ID пользователя (внешний ключ)
+    tournament_id INTEGER,                     -- ID турнира (внешний ключ)
+    date DATE,                                 -- Дата изменения
+    elo REAL,                                  -- Текущее значение рейтинга ELO
+    elo_delta REAL,                            -- Изменение рейтинга за турнир
+    FOREIGN KEY (user_id) REFERENCES users(id),-- Внешний ключ на пользователя
+    FOREIGN KEY (tournament_id) REFERENCES tournaments(id) -- Внешний ключ на турнир
+);
+
+-- Таблица параметров по умолчанию
+CREATE TABLE default_params (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,      -- Уникальный идентификатор
+    user_id INTEGER,                           -- ID пользователя (внешний ключ)
+    period TEXT,                               -- Период
+    game_type TEXT,                            -- Тип игры
+    tournament_type TEXT,                      -- Тип турнира
+    limit INTEGER,                             -- Лимит
+    FOREIGN KEY (user_id) REFERENCES users(id) -- Внешний ключ на пользователя
+);
